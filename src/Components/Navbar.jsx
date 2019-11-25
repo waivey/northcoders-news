@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "@reach/router";
 import * as api from "../Utils/api";
+import { navigate } from "@reach/router";
 
 class Navbar extends React.Component {
   state = {
@@ -15,6 +15,7 @@ class Navbar extends React.Component {
 
   handleSelect = ({ target: { value } }) => {
     console.log(value, "<<< val from selector");
+    navigate(`/topics/${value}`);
   };
 
   render() {
