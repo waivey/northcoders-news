@@ -13,9 +13,8 @@ class Navbar extends React.Component {
     });
   }
 
-  handleSelect = ({ target: { value } }) => {
-    console.log(value, "<<< val from selector");
-    navigate(`/topics/${value}`);
+  handleSelect = event => {
+    navigate(`/topics/${event.target.value}`);
   };
 
   render() {
@@ -38,7 +37,6 @@ class Navbar extends React.Component {
             );
           })}
         </select>
-        <h5>Filter? ->no functionality yet</h5>
       </nav>
     );
   }
