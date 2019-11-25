@@ -9,3 +9,11 @@ exports.fetchAllArticles = topic => {
       return articles;
     });
 };
+
+exports.fetchTopics = () => {
+  return axios
+    .get("https://nc-backend-project-news.herokuapp.com/api/topics")
+    .then(({ data: { topics } }) => {
+      return topics;
+    });
+};
