@@ -4,10 +4,7 @@ import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import { Router } from "@reach/router";
-import Articles from "./Components/Articles";
-import Topics from "./Components/Topics";
-
-import Home from "./Components/Home";
+import ArticlesList from "./Components/ArticlesList";
 
 function App() {
   return (
@@ -15,9 +12,8 @@ function App() {
       <Header />
       <Navbar />
       <Router>
-        <Home path="/" />
-        <Articles path="/articles/*" />
-        <Topics path="/topics/*" />
+        <ArticlesList path="/" />
+        <ArticlesList path="/topics/:slug" />
       </Router>
       <Footer />
     </div>

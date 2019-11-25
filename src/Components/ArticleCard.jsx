@@ -1,9 +1,13 @@
 import React from "react";
 
-const ArticleCard = () => {
+const ArticleCard = ({ title, author, created_at, comment_count }) => {
   return (
-    <div>
-      <h3>This is a Single Article</h3>
+    <div className="articleCard">
+      <h3>{title}</h3>
+      <p>
+        Posted by: {author}, comments: {comment_count}
+      </p>
+      <p>{created_at} </p>
     </div>
   );
 };

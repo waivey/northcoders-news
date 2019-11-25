@@ -1,0 +1,3 @@
+exports.formatDate = str => {
+  return "";
+};
