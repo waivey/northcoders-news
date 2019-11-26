@@ -6,7 +6,12 @@ class Sorter extends React.Component {
   };
 
   handleSelect = ({ target: { value } }) => {
-    this.props.sortArticles(value);
+    if (this.props.name === "articles") {
+      this.props.sortArticles(value);
+    } else {
+      console.log(value, "<<< did this make it into the handleSelect");
+      this.props.sortComments(value);
+    }
   };
 
   render() {

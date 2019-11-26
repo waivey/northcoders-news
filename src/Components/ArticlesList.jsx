@@ -39,7 +39,7 @@ class ArticlesList extends React.Component {
     if (isLoading) return <Loader />;
     return (
       <div className="articlesList">
-        <Sorter sortArticles={this.sortArticles} />
+        <Sorter name="articles" sortArticles={this.sortArticles} />
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
