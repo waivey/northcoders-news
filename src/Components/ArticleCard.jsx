@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import * as utils from "../Utils/utils";
 
 const ArticleCard = ({
   title,
@@ -18,7 +19,7 @@ const ArticleCard = ({
       <p>
         Posted by: {author}, comments: {comment_count}
       </p>
-      <p>{created_at} </p>
+      <p>{utils.formatDate(created_at)} </p>
       <p>votes: {votes}</p>
     </div>
   );
