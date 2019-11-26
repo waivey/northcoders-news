@@ -7,19 +7,30 @@ import { Router } from "@reach/router";
 import ArticlesList from "./Components/ArticlesList";
 import SingleArticle from "./Components/SingleArticle";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Navbar />
-      <Router>
-        <ArticlesList path="/" />
-        <ArticlesList path="/topics/:slug" />
-        <SingleArticle path="/articles/:article_id" />
-      </Router>
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    user: ""
+  };
+
+  getLoginStatus = value => {
+    this.setState({ user: value });
+  };
+
+  render() {
+    const { user } = this.state;
+    return (
+      <div className="App">
+        <Header />
+        <Navbar getLoginStatus={this.getLoginStatus} />
+        <Router>
+          <ArticlesList path="/" user={user} />
+          <ArticlesList path="/topics/:slug" user={user} />
+          <SingleArticle path="/articles/:article_id" user={user} />
+        </Router>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

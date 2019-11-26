@@ -15,10 +15,12 @@ class UserSignIn extends Component {
   }
 
   handleSelect = ({ target: { value } }) => {
+    this.props.getLoginStatus(value);
     this.setState({ isSignedIn: value });
   };
 
   logout = loggedout => {
+    this.props.getLoginStatus(loggedout);
     this.setState({ isSignedIn: loggedout });
   };
 

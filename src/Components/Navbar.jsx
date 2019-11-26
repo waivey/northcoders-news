@@ -21,7 +21,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navBar">
-        <UserSignIn />
+        <UserSignIn getLoginStatus={this.props.getLoginStatus} />
         <h4>Nav Bar</h4>
         <select name="topics">
           <option value="" defaultValue hidden>
