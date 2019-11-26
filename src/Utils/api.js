@@ -38,3 +38,11 @@ exports.fetchAllCommentsByArticleId = (article_id, sort_by) => {
       return comments;
     });
 };
+
+exports.fetchAllUsers = () => {
+  return axios
+    .get("https://nc-backend-project-news.herokuapp.com/api/users")
+    .then(({ data: { users } }) => {
+      return users;
+    });
+};

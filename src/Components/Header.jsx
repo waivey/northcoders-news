@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import UserSignIn from "./UserSignIn";
 
 const Header = () => {
   return (
@@ -7,6 +8,7 @@ const Header = () => {
       <h1>
         <Link to="/">Northcoders News</Link>
       </h1>
+      <UserSignIn />
     </header>
   );
 };
