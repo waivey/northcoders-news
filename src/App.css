@@ -34,3 +34,7 @@
 .signIn {
   border: 2px solid blue;
 }
+
+.commentForm {
+  border: 2px solid chartreuse;
+}

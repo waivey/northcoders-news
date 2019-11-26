@@ -2,6 +2,7 @@ import React from "react";
 import * as api from "../Utils/api";
 import CommentCard from "./CommentCard";
 import Sorter from "./Sorter";
+import CommentAdder from "./CommentAdder";
 
 class CommentsList extends React.Component {
   state = {
@@ -27,6 +28,12 @@ class CommentsList extends React.Component {
       });
   };
 
+  updateComments = newComment => {
+    this.setState(currentState => {
+      return { comments: [newComment, ...currentState.comments] };
+    });
+  };
+
   sortComments = value => {
     this.setState({ sorted: value });
   };
@@ -34,12 +41,27 @@ class CommentsList extends React.Component {
   render() {
     const { comments } = this.state;
     return (
-      <div className="commentList">
-        <Sorter name="comments" sortComments={this.sortComments} />
-        {comments.map(comment => {
-          return <CommentCard key={comment.comment_id} {...comment} />;
-        })}
-      </div>
+      <>
+        {this.props.user !== "" && (
+          <CommentAdder
+            article_id={this.props.article_id}
+            user={this.props.user}
+            updateComments={this.updateComments}
+          />
+        )}
+        <div className="commentList">
+          <Sorter name="comments" sortComments={this.sortComments} />
+          {comments.map(comment => {
+            return (
+              <CommentCard
+                user={this.props.user}
+                key={comment.comment_id}
+                {...comment}
+              />
+            );
+          })}
+        </div>
+      </>
     );
   }
 }

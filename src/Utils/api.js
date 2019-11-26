@@ -53,3 +53,14 @@ exports.updateVotes = (type, id, vote) => {
     { inc_votes: vote }
   );
 };
+
+exports.postComment = (article_id, username, body) => {
+  return axios
+    .post(
+      `https://nc-backend-project-news.herokuapp.com/api/articles/${article_id}/comments`,
+      { username, body }
+    )
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
+};

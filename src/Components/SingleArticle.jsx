@@ -33,9 +33,12 @@ class SingleArticle extends Component {
         </h5>
         <Voter id={article.article_id} votes={article.votes} type="articles" />
         <p>{article.body}</p>
-        {this.props.user !== "" && <button>Add Comment</button>}
+
         <ViewToggler name={article.comment_count}>
-          <CommentsList article_id={article.article_id} />
+          <CommentsList
+            article_id={article.article_id}
+            user={this.props.user}
+          />
         </ViewToggler>
       </main>
     );
