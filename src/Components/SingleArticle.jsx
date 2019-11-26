@@ -32,7 +32,7 @@ class SingleArticle extends Component {
         <h4>Votes: {article.votes}</h4>
         <p>{article.body}</p>
         <ViewToggler name={article.comment_count}>
-          <CommentsList />
+          <CommentsList article_id={article.article_id} />
         </ViewToggler>
       </div>
     );

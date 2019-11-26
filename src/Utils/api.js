@@ -27,3 +27,13 @@ exports.fetchSingleArticle = article_id => {
       return article;
     });
 };
+
+exports.fetchAllCommentsByArticleId = article_id => {
+  return axios
+    .get(
+      `https://nc-backend-project-news.herokuapp.com/api/articles/${article_id}/comments`
+    )
+    .then(({ data: { comments } }) => {
+      return comments;
+    });
+};

@@ -22,3 +22,11 @@
 .singleArticle {
   border: 2px solid palevioletred;
 }
+
+.commentList {
+  border: 2px solid forestgreen;
+}
+
+.commentCard {
+  border: 2px solid mediumturquoise;
+}
