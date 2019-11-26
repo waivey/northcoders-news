@@ -14,12 +14,16 @@ class Sorter extends React.Component {
   };
 
   render() {
+    let sort_options = [...this.state.sort_by];
+    if (this.props.name === "comments") {
+      sort_options.shift();
+    }
     return (
       <select name="sort_by">
         <option value="" defaultValue hidden>
           Sort
         </option>
-        {this.state.sort_by.map(option => {
+        {sort_options.map(option => {
           return (
             <option key={option} value={option} onClick={this.handleSelect}>
               {option}
