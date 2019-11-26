@@ -6,7 +6,6 @@ exports.fetchAllArticles = (topic, sort_by) => {
       params: { topic, sort_by }
     })
     .then(({ data: { articles } }) => {
-      console.log(articles);
       return articles;
     });
 };
@@ -25,7 +24,6 @@ exports.fetchSingleArticle = article_id => {
       `https://nc-backend-project-news.herokuapp.com/api/articles/${article_id}`
     )
     .then(({ data: { article } }) => {
-      console.log(article);
       return article;
     });
 };

@@ -16,7 +16,6 @@ class ArticlesList extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, "<<<prevProps");
     if (
       prevProps.slug !== this.props.slug ||
       prevState.sorted !== this.state.sorted

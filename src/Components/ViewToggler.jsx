@@ -7,14 +7,14 @@ class ViewToggler extends Component {
 
   handleClick = () => {
     this.setState(currentState => {
-      return { isVisible: !currentState };
+      return { isVisible: !currentState.isVisible };
     });
   };
 
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>{this.props.name}</button>
+        <button onClick={this.handleClick}>Comments: {this.props.name}</button>
         {this.state.isVisible && this.props.children}
       </div>
     );
