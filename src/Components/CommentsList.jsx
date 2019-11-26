@@ -28,7 +28,6 @@ class CommentsList extends React.Component {
   };
 
   sortComments = value => {
-    console.log(value, "did we make it back to sortComments in the LIst??");
     this.setState({ sorted: value });
   };
 

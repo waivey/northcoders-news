@@ -29,7 +29,6 @@ exports.fetchSingleArticle = article_id => {
 };
 
 exports.fetchAllCommentsByArticleId = (article_id, sort_by) => {
-  console.log(sort_by, "sort_by in api??");
   return axios
     .get(
       `https://nc-backend-project-news.herokuapp.com/api/articles/${article_id}/comments`,
