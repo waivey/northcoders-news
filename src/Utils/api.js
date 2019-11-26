@@ -64,3 +64,9 @@ exports.postComment = (article_id, username, body) => {
       return comment;
     });
 };
+
+exports.removeComment = comment_id => {
+  return axios.delete(
+    `https://nc-backend-project-news.herokuapp.com/api/comments/${comment_id}`
+  );
+};

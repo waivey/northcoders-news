@@ -54,6 +54,7 @@ class CommentsList extends React.Component {
           {comments.map(comment => {
             return (
               <CommentCard
+                getComments={this.getComments}
                 user={this.props.user}
                 key={comment.comment_id}
                 {...comment}

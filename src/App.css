@@ -38,3 +38,7 @@
 .commentForm {
   border: 2px solid chartreuse;
 }
+
+.deleteComment {
+  border: 2px solid darkcyan;
+}
