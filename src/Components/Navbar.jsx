@@ -1,6 +1,7 @@
 import React from "react";
 import * as api from "../Utils/api";
 import { navigate } from "@reach/router";
+import UserSignIn from "./UserSignIn";
 
 class Navbar extends React.Component {
   state = {
@@ -20,6 +21,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navBar">
+        <UserSignIn />
         <h4>Nav Bar</h4>
         <select name="topics">
           <option value="" defaultValue hidden>

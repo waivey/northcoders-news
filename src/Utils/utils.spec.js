@@ -11,7 +11,7 @@ describe("formatDate", () => {
   });
   it("does not mutate original string", () => {
     const input = "2018-04-16T19:29:32.774Z";
-    const output = formatDate(input);
+    formatDate(input);
     expect(input).toBe("2018-04-16T19:29:32.774Z");
   });
 });
