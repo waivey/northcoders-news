@@ -6,7 +6,7 @@ class Sorter extends React.Component {
   };
 
   handleSelect = ({ target: { value } }) => {
-    this.props.getArticles(value);
+    this.props.sortArticles(value);
   };
 
   render() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArticleCard = ({ title, author, created_at, comment_count }) => {
+const ArticleCard = ({ title, author, created_at, comment_count, votes }) => {
   return (
     <div className="articleCard">
       <h3>{title}</h3>
@@ -8,6 +8,7 @@ const ArticleCard = ({ title, author, created_at, comment_count }) => {
         Posted by: {author}, comments: {comment_count}
       </p>
       <p>{created_at} </p>
+      <p>votes: {votes}</p>
     </div>
   );
 };

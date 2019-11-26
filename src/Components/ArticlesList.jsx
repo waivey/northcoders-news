@@ -26,9 +26,13 @@ class ArticlesList extends React.Component {
   }
 
   getArticles = () => {
-    api.fetchAllArticles(this.props.slug).then(articles => {
+    api.fetchAllArticles(this.props.slug, this.state.sorted).then(articles => {
       this.setState({ articles, isLoading: false });
     });
+  };
+
+  sortArticles = value => {
+    this.setState({ sorted: value });
   };
 
   render() {
@@ -36,7 +40,7 @@ class ArticlesList extends React.Component {
     if (isLoading) return <Loader />;
     return (
       <div className="articlesList">
-        <Sorter getArticles={this.getArticles} />
+        <Sorter sortArticles={this.sortArticles} />
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
