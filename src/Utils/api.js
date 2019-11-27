@@ -50,7 +50,9 @@ exports.fetchAllUsers = () => {
 exports.updateVotes = (type, id, vote) => {
   return axios.patch(
     `https://nc-backend-project-news.herokuapp.com/api/${type}/${id}`,
-    { inc_votes: vote }
+    {
+      inc_votes: vote
+    }
   );
 };
 

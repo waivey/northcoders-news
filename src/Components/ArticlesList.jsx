@@ -3,12 +3,14 @@ import Loader from "./Loader";
 import * as api from "../Utils/api";
 import ArticleCard from "./ArticleCard";
 import Sorter from "./Sorter";
+import ErrHandler from "./ErrHandler";
 
 class ArticlesList extends React.Component {
   state = {
     articles: [],
     isLoading: true,
-    sorted: "created_at"
+    sorted: "created_at",
+    err: ""
   };
 
   componentDidMount() {
@@ -25,9 +27,20 @@ class ArticlesList extends React.Component {
   }
 
   getArticles = () => {
-    api.fetchAllArticles(this.props.slug, this.state.sorted).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchAllArticles(this.props.slug, this.state.sorted)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg }
+          }
+        }) => {
+          this.setState({ err: msg, isLoading: false });
+        }
+      );
   };
 
   sortArticles = value => {
@@ -35,8 +48,9 @@ class ArticlesList extends React.Component {
   };
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, err } = this.state;
     if (isLoading) return <Loader />;
+    if (err) return <ErrHandler msg={err} />;
     return (
       <div className="articlesList">
         <Sorter name="articles" sortArticles={this.sortArticles} />

@@ -5,11 +5,13 @@ import ViewToggler from "./ViewToggler";
 import CommentsList from "./CommentsList";
 import Voter from "./Voter";
 import * as utils from "../Utils/utils";
+import ErrHandler from "./ErrHandler";
 
 class SingleArticle extends Component {
   state = {
     article: [],
-    isLoading: true
+    isLoading: true,
+    err: ""
   };
 
   componentDidMount() {
@@ -17,14 +19,26 @@ class SingleArticle extends Component {
   }
 
   getSingleArticle = () => {
-    api.fetchSingleArticle(this.props.article_id).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .fetchSingleArticle(this.props.article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg }
+          }
+        }) => {
+          this.setState({ err: msg, isLoading: false });
+        }
+      );
   };
 
   render() {
-    const { isLoading, article } = this.state;
+    const { isLoading, article, err } = this.state;
     if (isLoading) return <Loader />;
+    if (err) return <ErrHandler msg={err} />;
     return (
       <main className="singleArticle">
         <h2>{article.title}</h2>

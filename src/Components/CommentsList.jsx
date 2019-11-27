@@ -3,11 +3,15 @@ import * as api from "../Utils/api";
 import CommentCard from "./CommentCard";
 import Sorter from "./Sorter";
 import CommentAdder from "./CommentAdder";
+import Loader from "./Loader";
+import ErrHandler from "./ErrHandler";
 
 class CommentsList extends React.Component {
   state = {
     comments: [],
-    sorted: "created_at"
+    sorted: "created_at",
+    isLoading: true,
+    err: ""
   };
 
   componentDidMount() {
@@ -24,8 +28,17 @@ class CommentsList extends React.Component {
     api
       .fetchAllCommentsByArticleId(this.props.article_id, this.state.sorted)
       .then(comments => {
-        this.setState({ comments });
-      });
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg }
+          }
+        }) => {
+          this.setState({ err: msg, isLoading: false });
+        }
+      );
   };
 
   updateComments = newComment => {
@@ -39,7 +52,9 @@ class CommentsList extends React.Component {
   };
 
   render() {
-    const { comments } = this.state;
+    const { comments, isLoading, err } = this.state;
+    if (isLoading) return <Loader />;
+    if (err) return <ErrHandler msg={err} />;
     return (
       <>
         {this.props.user !== "" && (
