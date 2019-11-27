@@ -1,14 +1,73 @@
 .App {
   text-align: center;
-  border: 2px solid red;
+  border: 2px solid rgb(41, 40, 40);
+  background: ivory;
+  font-family: "Martel", serif;
+}
+.headerBox {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  background: rgb(153, 36, 36);
+  color: ivory;
+  height: 70px;
+}
+
+/* header {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  background: rgb(153, 36, 36);
+  color: ivory;
+
+  height: 100px;
+} */
+
+h1 a {
+  margin: 0;
+  color: ivory;
+  font-family: "Calistoga", cursive;
+  font-size: 30px;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Patua One", cursive;
+  font-size: 20px;
+  color: rgb(41, 40, 40);
+}
+
+p {
+  font-size: 13px;
+}
+
+.voter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid firebrick;
 }
 
 .navBar {
-  border: 2px solid rosybrown;
+  border: 2px solid rgb(41, 40, 40);
+  position: sticky;
+  background: ivory;
+  top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "topics signIn";
+  align-items: baseline;
+  justify-items: center;
+  max-height: 95px;
 }
 
-.headerBox {
-  border: 2px solid olivedrab;
+.greeting {
+  justify-self: flex-start;
 }
 
 .articlesList {
@@ -31,9 +90,9 @@
   border: 2px solid mediumturquoise;
 }
 
-.signIn {
+/* .signIn {
   border: 2px solid blue;
-}
+} */
 
 .commentForm {
   border: 2px solid chartreuse;
@@ -41,4 +100,8 @@
 
 .deleteComment {
   border: 2px solid darkcyan;
+}
+
+.articleAdder {
+  border: 2px solid goldenrod;
 }

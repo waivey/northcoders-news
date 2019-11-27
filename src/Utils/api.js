@@ -67,12 +67,6 @@ exports.postComment = (article_id, username, body) => {
     });
 };
 
-// exports.removeComment = id => {
-//   return axios.delete(
-//     `https://nc-backend-project-news.herokuapp.com/api/comment/${id}`
-//   );
-// };
-
 exports.removeItem = (type, id) => {
   return axios.delete(
     `https://nc-backend-project-news.herokuapp.com/api/${type}/${id}`
@@ -87,7 +81,6 @@ exports.postArticle = (username, title, body) => {
       body
     })
     .then(({ data: { article } }) => {
-      console.log({ article });
       return article;
     });
 };

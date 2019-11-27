@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import * as api from "../Utils/api";
 import { navigate } from "@reach/router";
-
 import ErrHandler from "./ErrHandler";
 
 class Deleter extends Component {
   state = {
-    isLoading: true,
     err: ""
   };
 
   handlClick = () => {
-    console.log(this.props.type, this.props.article_id);
     const removeButton = window.confirm(
       `Are you sure you want to delete your ${this.props.type}?`
     );

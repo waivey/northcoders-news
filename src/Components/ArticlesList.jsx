@@ -52,12 +52,12 @@ class ArticlesList extends React.Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;
     return (
-      <div className="articlesList">
+      <main className="articlesList">
         <Sorter name="articles" sortArticles={this.sortArticles} />
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
-      </div>
+      </main>
     );
   }
 }

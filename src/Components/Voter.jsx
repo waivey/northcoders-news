@@ -15,7 +15,7 @@ class Voter extends Component {
 
   render() {
     return (
-      <section>
+      <section className="voter">
         <button
           name="1"
           disabled={this.state.optimisticVotes > 0}

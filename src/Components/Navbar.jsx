@@ -23,8 +23,6 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navBar">
-        <UserSignIn getLoginStatus={this.props.getLoginStatus} />
-        <h4>Nav Bar</h4>
         <select name="topics">
           <option value="" defaultValue hidden>
             Topics
@@ -41,6 +39,7 @@ class Navbar extends React.Component {
             );
           })}
         </select>
+        <UserSignIn getLoginStatus={this.props.getLoginStatus} />
         {this.props.user && (
           <ViewToggler type="Add Article">
             <ArticleAdder user={this.props.user} topics={this.state.topics} />

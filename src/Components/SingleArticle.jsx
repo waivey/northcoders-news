@@ -38,7 +38,7 @@ class SingleArticle extends Component {
 
   render() {
     const { isLoading, article, err } = this.state;
-    console.log(article);
+
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;
     return (

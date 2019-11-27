@@ -34,35 +34,37 @@ class ArticleAdder extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        Topic:{" "}
-        <select name="topics" id="">
-          {this.props.topics.map(topic => {
-            return (
-              <option key={`${topic.slug}2`} value={topic.slug}>
-                {topic.slug}
-              </option>
-            );
-          })}
-        </select>
-        Title:
-        <input
-          type="text"
-          id="title"
-          value={this.state.title}
-          required
-          onChange={this.handleInput}
-        ></input>
-        Article:
-        <input
-          type="text"
-          id="body"
-          value={this.state.body}
-          required
-          onChange={this.handleInput}
-        ></input>
-        <button>Submit Article</button>
-      </form>
+      <div className="articleAdder">
+        <form onSubmit={this.handleSubmit}>
+          Topic:{" "}
+          <select name="topics" id="">
+            {this.props.topics.map(topic => {
+              return (
+                <option key={`${topic.slug}2`} value={topic.slug}>
+                  {topic.slug}
+                </option>
+              );
+            })}
+          </select>
+          Title:
+          <input
+            type="text"
+            id="title"
+            value={this.state.title}
+            required
+            onChange={this.handleInput}
+          ></input>
+          Article:
+          <input
+            type="text"
+            id="body"
+            value={this.state.body}
+            required
+            onChange={this.handleInput}
+          ></input>
+          <button>Submit Article</button>
+        </form>
+      </div>
     );
   }
 }
