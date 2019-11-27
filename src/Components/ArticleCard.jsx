@@ -13,14 +13,17 @@ const ArticleCard = ({
 }) => {
   return (
     <div className="articleCard">
-      <Link to={`/articles/${article_id}`}>
-        <h3>{title}</h3>
-      </Link>
+      <div className="articleInfo">
+        <Link to={`/articles/${article_id}`}>
+          <h3>{title}</h3>
+        </Link>
 
-      <p>
-        Posted by: {author}, comments: {comment_count}
-      </p>
-      <p>{utils.formatDate(created_at)} </p>
+        <p>
+          Posted by: {author}, comments: {comment_count}
+        </p>
+        <p>{utils.formatDate(created_at)} </p>
+      </div>
+
       <Voter id={article_id} votes={votes} type="articles" />
     </div>
   );

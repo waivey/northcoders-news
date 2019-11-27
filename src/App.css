@@ -46,13 +46,6 @@ p {
   font-size: 13px;
 }
 
-.voter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 2px solid firebrick;
-}
-
 .navBar {
   border: 2px solid rgb(41, 40, 40);
   position: sticky;
@@ -66,16 +59,25 @@ p {
   max-height: 95px;
 }
 
-.greeting {
-  justify-self: flex-start;
+.articleCard {
+  border: 2px solid rgb(41, 40, 40);
+  display: grid;
+  grid-template-columns: 75px auto;
+}
+
+.articleInfo {
+  grid-column-start: 2;
+}
+
+.voter {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  /* justify-items: center;
+  align-items: center; */
 }
 
 .articlesList {
   border: 2px solid blueviolet;
-}
-
-.articleCard {
-  border: 2px solid aqua;
 }
 
 .singleArticle {
@@ -104,4 +106,15 @@ p {
 
 .articleAdder {
   border: 2px solid goldenrod;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: "Calistoga", cursive;
+  font-size: 15px;
+}
+
+button:hover {
+  font-size: 18px;
 }
