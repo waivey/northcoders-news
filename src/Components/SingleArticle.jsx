@@ -38,13 +38,14 @@ class SingleArticle extends Component {
 
   render() {
     const { isLoading, article, err } = this.state;
+    console.log(article);
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;
     return (
       <main className="singleArticle">
         <h2>{article.title}</h2>
         {this.props.user === article.author && (
-          <Deleter article_id={article.article_id} type="article" />
+          <Deleter id={article.article_id} type="articles" />
         )}
         <h5>
           Posted by: {article.author}, {utils.formatDate(article.created_at)}

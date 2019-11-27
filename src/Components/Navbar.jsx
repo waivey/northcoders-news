@@ -43,7 +43,7 @@ class Navbar extends React.Component {
         </select>
         {this.props.user && (
           <ViewToggler type="Add Article">
-            <ArticleAdder user={this.props.user} />
+            <ArticleAdder user={this.props.user} topics={this.state.topics} />
           </ViewToggler>
         )}
       </nav>

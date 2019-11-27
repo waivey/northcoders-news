@@ -18,11 +18,7 @@ const CommentCard = ({
         Posted by: {author}, {utils.formatDate(created_at)}
       </h5>
       {user === author && (
-        <Deleter
-          comment_id={comment_id}
-          getComments={getComments}
-          type="comment"
-        />
+        <Deleter id={comment_id} getComments={getComments} type="comments" />
       )}
       <Voter id={comment_id} votes={votes} type="comments" />
       <p>{body}</p>
