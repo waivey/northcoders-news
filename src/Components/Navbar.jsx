@@ -2,6 +2,8 @@ import React from "react";
 import * as api from "../Utils/api";
 import { navigate } from "@reach/router";
 import UserSignIn from "./UserSignIn";
+import ArticleAdder from "./ArticleAdder";
+import ViewToggler from "./ViewToggler";
 
 class Navbar extends React.Component {
   state = {
@@ -39,6 +41,11 @@ class Navbar extends React.Component {
             );
           })}
         </select>
+        {this.props.user && (
+          <ViewToggler type="Add Article">
+            <ArticleAdder user={this.props.user} />
+          </ViewToggler>
+        )}
       </nav>
     );
   }

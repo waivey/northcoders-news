@@ -6,6 +6,7 @@ import CommentsList from "./CommentsList";
 import Voter from "./Voter";
 import * as utils from "../Utils/utils";
 import ErrHandler from "./ErrHandler";
+import Deleter from "./Deleter";
 
 class SingleArticle extends Component {
   state = {
@@ -42,13 +43,16 @@ class SingleArticle extends Component {
     return (
       <main className="singleArticle">
         <h2>{article.title}</h2>
+        {this.props.user === article.author && (
+          <Deleter article_id={article.article_id} type="article" />
+        )}
         <h5>
           Posted by: {article.author}, {utils.formatDate(article.created_at)}
         </h5>
         <Voter id={article.article_id} votes={article.votes} type="articles" />
         <p>{article.body}</p>
 
-        <ViewToggler name={article.comment_count}>
+        <ViewToggler name={article.comment_count} type="Comments:">
           <CommentsList
             article_id={article.article_id}
             user={this.props.user}

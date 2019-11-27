@@ -1,7 +1,7 @@
 import React from "react";
 import Voter from "./Voter";
 import * as utils from "../Utils/utils";
-import CommentDeleter from "./CommentDeleter";
+import Deleter from "./Deleter";
 
 const CommentCard = ({
   author,
@@ -18,7 +18,11 @@ const CommentCard = ({
         Posted by: {author}, {utils.formatDate(created_at)}
       </h5>
       {user === author && (
-        <CommentDeleter comment_id={comment_id} getComments={getComments} />
+        <Deleter
+          comment_id={comment_id}
+          getComments={getComments}
+          type="comment"
+        />
       )}
       <Voter id={comment_id} votes={votes} type="comments" />
       <p>{body}</p>

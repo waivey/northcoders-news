@@ -67,8 +67,8 @@ exports.postComment = (article_id, username, body) => {
     });
 };
 
-exports.removeComment = comment_id => {
+exports.removeItem = (type, id) => {
   return axios.delete(
-    `https://nc-backend-project-news.herokuapp.com/api/comments/${comment_id}`
+    `https://nc-backend-project-news.herokuapp.com/api/${type}/${id}`
   );
 };

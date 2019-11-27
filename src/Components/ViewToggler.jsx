@@ -14,7 +14,9 @@ class ViewToggler extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Comments: {this.props.name}</button>
+        <button onClick={this.handleClick}>
+          {this.props.type} {this.props.name}
+        </button>
         {this.state.isVisible && this.props.children}
       </div>
     );

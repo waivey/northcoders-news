@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Navbar getLoginStatus={this.getLoginStatus} />
+        <Navbar getLoginStatus={this.getLoginStatus} user={user} />
         <Router>
           <ArticlesList path="/" user={user} />
           <ArticlesList path="/topics/:slug" user={user} />
