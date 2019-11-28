@@ -60,8 +60,13 @@ class SingleArticle extends Component {
             />
           </ViewToggler>
         </div>
-
-        <Voter id={article.article_id} votes={article.votes} type="articles" />
+        <div className="articleVoter">
+          <Voter
+            id={article.article_id}
+            votes={article.votes}
+            type="articles"
+          />
+        </div>
       </main>
     );
   }

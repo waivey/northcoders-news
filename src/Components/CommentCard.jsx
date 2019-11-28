@@ -20,7 +20,10 @@ const CommentCard = ({
       {user === author && (
         <Deleter id={comment_id} getComments={getComments} type="comments" />
       )}
-      <Voter id={comment_id} votes={votes} type="comments" />
+      <div className="commentVoter">
+        <Voter id={comment_id} votes={votes} type="comments" />
+      </div>
+
       <p>{body}</p>
     </div>
   );

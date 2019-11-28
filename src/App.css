@@ -11,6 +11,7 @@
   background: rgb(153, 36, 36);
   color: ivory;
   height: 70px;
+  z-index: 5;
 }
 
 h1 a {
@@ -47,6 +48,7 @@ p {
   align-items: baseline;
   justify-items: center;
   max-height: 100px;
+  z-index: 5;
 }
 
 .articleCard {
@@ -63,6 +65,8 @@ p {
 .voter {
   grid-column-start: 1;
   grid-row-start: 1;
+  justify-items: center;
+  align-items: center;
 }
 
 /* .articlesList {
@@ -74,6 +78,11 @@ p {
   /* border: 2px solid palevioletred; */
   display: grid;
   grid-template-columns: 75px auto;
+}
+
+.articleVoter {
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
 /* .commentList {
@@ -93,6 +102,36 @@ p {
   /* border: 2px solid chartreuse; */
   margin-bottom: 20px;
 }
+
+.commentVoter .voter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+}
+
+.upArrow button {
+  background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
+  background-repeat: no-repeat;
+  transform: rotate(270deg);
+  z-index: 1;
+}
+
+.downArrow button {
+  background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
+  background-repeat: no-repeat;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+/* .upArrow {
+  transform: rotate(270deg);
+}
+
+.downArrow {
+  transform: rotate(90deg);
+  max-width: 15px;
+} */
 
 .deleteComment {
   justify-content: center;

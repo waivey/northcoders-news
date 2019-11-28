@@ -16,21 +16,31 @@ class Voter extends Component {
   render() {
     return (
       <section className="voter">
-        <button
-          name="1"
-          disabled={this.state.optimisticVotes > 0}
-          onClick={this.handleClick}
-        >
-          Up
-        </button>
-        <h5>Votes: {this.props.votes + this.state.optimisticVotes}</h5>
-        <button
-          name="-1"
-          disabled={this.state.optimisticVotes < 0}
-          onClick={this.handleClick}
-        >
-          Down
-        </button>
+        <div className="upArrow">
+          <button
+            name="1"
+            disabled={this.state.optimisticVotes > 0}
+            onClick={this.handleClick}
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/16/16049.svg"
+              alt="up arrow"
+            />
+          </button>
+        </div>
+        <h5>{this.props.votes + this.state.optimisticVotes}</h5>
+        <div className="downArrow">
+          <button
+            name="-1"
+            disabled={this.state.optimisticVotes < 0}
+            onClick={this.handleClick}
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/16/16049.svg"
+              alt="down arrow"
+            />
+          </button>
+        </div>
       </section>
     );
   }
