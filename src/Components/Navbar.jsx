@@ -23,17 +23,13 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navBar">
-        <select name="topics">
+        <select name="topics" onClick={this.handleSelect}>
           <option value="" defaultValue hidden>
             Topics
           </option>
           {this.state.topics.map(topic => {
             return (
-              <option
-                key={topic.slug}
-                value={topic.slug}
-                onClick={this.handleSelect}
-              >
+              <option key={topic.slug} value={topic.slug}>
                 {topic.slug}
               </option>
             );
