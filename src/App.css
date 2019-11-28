@@ -119,11 +119,13 @@ p {
   position: sticky;
   background: rgb(153, 36, 36);
   bottom: 0;
+  z-index: 5;
 }
 
 .footer {
   background: rgb(153, 36, 36);
   color: ivory;
+  z-index: 5;
 }
 
 .downPageArrow button {
