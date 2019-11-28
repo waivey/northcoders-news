@@ -15,6 +15,7 @@ class UserSignIn extends Component {
   }
 
   handleSelect = ({ target: { value } }) => {
+    console.log(value);
     this.props.getLoginStatus(value);
     this.setState({ isSignedIn: value });
   };
@@ -29,16 +30,12 @@ class UserSignIn extends Component {
     if (isSignedIn === "") {
       return (
         <div className="signIn">
-          <select name="signIn" id="">
+          <select name="signIn" id="" onChange={this.handleSelect}>
             <option value="" defaultValue hidden>
               Sign In
             </option>
             {users.map(user => {
-              return (
-                <option key={user.username} onClick={this.handleSelect}>
-                  {user.username}
-                </option>
-              );
+              return <option key={user.username}>{user.username}</option>;
             })}
           </select>
         </div>
