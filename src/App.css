@@ -69,13 +69,9 @@ p {
   align-items: center;
 }
 
-/* .articlesList {
-  border: 2px solid blueviolet;
-} */
-
 .singleArticle {
   margin-right: 20px;
-  /* border: 2px solid palevioletred; */
+
   display: grid;
   grid-template-columns: 75px auto;
 }
@@ -85,21 +81,12 @@ p {
   grid-row-start: 1;
 }
 
-/* .commentList {
-  border: 2px solid forestgreen;
-} */
-
 .commentCard {
   margin-top: 10px;
   border: 2px solid rgb(41, 40, 40);
 }
 
-/* .signIn {
-  border: 2px solid blue;
-} */
-
 .commentForm {
-  /* border: 2px solid chartreuse; */
   margin-bottom: 20px;
 }
 
@@ -123,15 +110,6 @@ p {
   transform: rotate(90deg);
   z-index: 1;
 }
-
-/* .upArrow {
-  transform: rotate(270deg);
-}
-
-.downArrow {
-  transform: rotate(90deg);
-  max-width: 15px;
-} */
 
 .deleteComment {
   justify-content: center;
