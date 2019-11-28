@@ -19,13 +19,13 @@ class Sorter extends React.Component {
       sort_options.shift();
     }
     return (
-      <select name="sort_by">
+      <select name="sort_by" onChange={this.handleSelect}>
         <option value="" defaultValue hidden>
           Sort
         </option>
         {sort_options.map(option => {
           return (
-            <option key={option} value={option} onChange={this.handleSelect}>
+            <option key={option} value={option}>
               {option}
             </option>
           );
