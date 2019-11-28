@@ -157,3 +157,22 @@ button {
 button:hover {
   font-size: 15px;
 }
+
+select {
+  font-family: "Calistoga", cursive;
+  background-color: rgb(153, 36, 36);
+  color: ivory;
+  text-align: center;
+  appearance: none;
+  background-image: url("https://image.flaticon.com/icons/svg/16/16049.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+select:hover {
+  background-color: rgb(116, 22, 22);
+}
+
+option:hover {
+  background-color: rgb(116, 22, 22);
+}

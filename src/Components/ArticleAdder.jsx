@@ -36,7 +36,7 @@ class ArticleAdder extends Component {
     return (
       <div className="articleAdder">
         <form onSubmit={this.handleSubmit}>
-          Topic:{" "}
+          Topic:
           <select name="topics" id="">
             {this.props.topics.map(topic => {
               return (
@@ -46,6 +46,7 @@ class ArticleAdder extends Component {
               );
             })}
           </select>
+          <br />
           Title:
           <input
             type="text"
@@ -54,6 +55,7 @@ class ArticleAdder extends Component {
             required
             onChange={this.handleInput}
           ></input>
+          <br />
           Article:
           <input
             type="text"
