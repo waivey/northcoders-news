@@ -25,12 +25,12 @@ class CommentAdder extends Component {
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>
         <h6>Comment:</h6>{" "}
-        <input
+        <textarea
           onChange={this.handleInput}
           type="text"
           value={this.state.body}
           required
-        ></input>
+        ></textarea>
         <button>Add Comment</button>
       </form>
     );

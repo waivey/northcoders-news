@@ -47,7 +47,7 @@ p {
   grid-template-areas: "topics signIn";
   align-items: baseline;
   justify-items: center;
-  max-height: 100px;
+  max-height: 115px;
   z-index: 5;
 }
 
@@ -137,7 +137,7 @@ button:hover {
 }
 
 select {
-  font-family: "Calistoga", cursive;
+  font-family: "Calistoga", serif;
   background-color: rgb(153, 36, 36);
   color: ivory;
   text-align: center;
@@ -147,10 +147,12 @@ select {
   background-position: right;
 }
 
-select:hover {
-  background-color: rgb(116, 22, 22);
+select option:checked,
+select option:hover {
+  box-shadow: 0 0 10px 100px #1882a8 inset;
 }
 
-option:hover {
-  background-color: rgb(116, 22, 22);
+option {
+  text-decoration-color: none;
+  background-color: rgb(153, 36, 36);
 }

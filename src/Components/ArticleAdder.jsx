@@ -57,13 +57,14 @@ class ArticleAdder extends Component {
           ></input>
           <br />
           Article:
-          <input
+          <textarea
             type="text"
             id="body"
             value={this.state.body}
             required
             onChange={this.handleInput}
-          ></input>
+          ></textarea>
+          <br />
           <button>Submit Article</button>
         </form>
       </div>
