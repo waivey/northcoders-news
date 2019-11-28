@@ -25,7 +25,7 @@ class Sorter extends React.Component {
         </option>
         {sort_options.map(option => {
           return (
-            <option key={option} value={option} onClick={this.handleSelect}>
+            <option key={option} value={option} onChange={this.handleSelect}>
               {option}
             </option>
           );
