@@ -7,7 +7,8 @@ import ViewToggler from "./ViewToggler";
 
 class Navbar extends React.Component {
   state = {
-    topics: []
+    topics: [],
+    topic: ""
   };
 
   componentDidMount() {
@@ -23,8 +24,8 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navBar">
-        <select name="topics" onClick={this.handleSelect}>
-          <option value="" defaultValue hidden>
+        <select name="topics" onChange={this.handleSelect}>
+          <option defaultValue hidden>
             Topics
           </option>
           {this.state.topics.map(topic => {
