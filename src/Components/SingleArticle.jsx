@@ -43,22 +43,25 @@ class SingleArticle extends Component {
     if (err) return <ErrHandler msg={err} />;
     return (
       <main className="singleArticle">
-        <h2>{article.title}</h2>
-        {this.props.user === article.author && (
-          <Deleter id={article.article_id} type="articles" />
-        )}
-        <h5>
-          Posted by: {article.author}, {utils.formatDate(article.created_at)}
-        </h5>
-        <Voter id={article.article_id} votes={article.votes} type="articles" />
-        <p>{article.body}</p>
+        <div>
+          <h2>{article.title}</h2>
+          {this.props.user === article.author && (
+            <Deleter id={article.article_id} type="articles" />
+          )}
+          <h5>
+            Posted by: {article.author}, {utils.formatDate(article.created_at)}
+          </h5>
+          <p>{article.body}</p>
 
-        <ViewToggler name={article.comment_count} type="Comments:">
-          <CommentsList
-            article_id={article.article_id}
-            user={this.props.user}
-          />
-        </ViewToggler>
+          <ViewToggler name={article.comment_count} type="Comments:">
+            <CommentsList
+              article_id={article.article_id}
+              user={this.props.user}
+            />
+          </ViewToggler>
+        </div>
+
+        <Voter id={article.article_id} votes={article.votes} type="articles" />
       </main>
     );
   }

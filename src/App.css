@@ -63,8 +63,6 @@ p {
 .voter {
   grid-column-start: 1;
   grid-row-start: 1;
-  /* justify-items: center;
-  align-items: center; */
 }
 
 /* .articlesList {
@@ -72,15 +70,19 @@ p {
 } */
 
 .singleArticle {
-  border: 2px solid palevioletred;
+  margin-right: 20px;
+  /* border: 2px solid palevioletred; */
+  display: grid;
+  grid-template-columns: 75px auto;
 }
 
-.commentList {
+/* .commentList {
   border: 2px solid forestgreen;
-}
+} */
 
 .commentCard {
-  border: 2px solid mediumturquoise;
+  margin-top: 10px;
+  border: 2px solid rgb(41, 40, 40);
 }
 
 /* .signIn {
@@ -88,11 +90,17 @@ p {
 } */
 
 .commentForm {
-  border: 2px solid chartreuse;
+  /* border: 2px solid chartreuse; */
+  margin-bottom: 20px;
 }
 
 .deleteComment {
-  border: 2px solid darkcyan;
+  justify-content: center;
+  align-content: center;
+}
+
+.deleteComment button {
+  border: 1px solid rgb(41, 40, 40);
 }
 
 .articleAdder {

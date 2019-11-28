@@ -23,7 +23,7 @@ class Voter extends Component {
         >
           Up
         </button>
-        <h4>Votes: {this.props.votes + this.state.optimisticVotes}</h4>
+        <h5>Votes: {this.props.votes + this.state.optimisticVotes}</h5>
         <button
           name="-1"
           disabled={this.state.optimisticVotes < 0}

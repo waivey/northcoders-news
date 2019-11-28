@@ -19,7 +19,7 @@ const ArticleCard = ({
         </Link>
 
         <p>
-          Posted by: {author}, comments: {comment_count}
+          Posted by: {author}, Comments: {comment_count}
         </p>
         <p>{utils.formatDate(created_at)} </p>
       </div>

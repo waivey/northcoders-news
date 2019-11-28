@@ -18,8 +18,8 @@ class ArticleAdder extends Component {
 
     api
       .postArticle(this.props.user, this.state.title, this.state.body)
-      .then(({ article: { article_id } }) => {
-        navigate(`/articles/${article_id}`);
+      .then(article => {
+        navigate(`/articles/${article.article_id}`);
       })
       .catch(
         ({
