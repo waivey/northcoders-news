@@ -46,7 +46,7 @@ class UserSignIn extends Component {
     } else {
       return (
         <div className="signIn">
-          <h4>Hi, {isSignedIn}</h4>
+          <h5>Hi, {isSignedIn}</h5>
           <UserLogOut logout={this.logout} />
         </div>
       );
