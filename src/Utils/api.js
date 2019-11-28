@@ -1,12 +1,12 @@
 const axios = require("axios");
 
-exports.fetchAllArticles = (topic, sort_by) => {
+exports.fetchAllArticles = (topic, sort_by, p) => {
   return axios
     .get("https://nc-backend-project-news.herokuapp.com/api/articles/", {
-      params: { topic, sort_by }
+      params: { topic, sort_by, p }
     })
-    .then(({ data: { articles } }) => {
-      return articles;
+    .then(({ data: { articles, total_count } }) => {
+      return { articles, total_count };
     });
 };
 

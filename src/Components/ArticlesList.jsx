@@ -10,7 +10,9 @@ class ArticlesList extends React.Component {
     articles: [],
     isLoading: true,
     sorted: "created_at",
-    err: ""
+    err: "",
+    maxPage: 1,
+    page: 1
   };
 
   componentDidMount() {
@@ -20,7 +22,8 @@ class ArticlesList extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (
       prevProps.slug !== this.props.slug ||
-      prevState.sorted !== this.state.sorted
+      prevState.sorted !== this.state.sorted ||
+      prevState.page !== this.state.page
     ) {
       this.getArticles();
     }
@@ -28,9 +31,13 @@ class ArticlesList extends React.Component {
 
   getArticles = () => {
     api
-      .fetchAllArticles(this.props.slug, this.state.sorted)
-      .then(articles => {
-        this.setState({ articles, isLoading: false });
+      .fetchAllArticles(this.props.slug, this.state.sorted, this.state.page)
+      .then(({ articles, total_count }) => {
+        this.setState({
+          articles,
+          isLoading: false,
+          maxPage: Math.ceil(total_count / 10)
+        });
       })
       .catch(
         ({
@@ -47,7 +54,14 @@ class ArticlesList extends React.Component {
     this.setState({ sorted: value });
   };
 
+  handlePageChange = direction => {
+    this.setState(currentState => {
+      return { page: currentState.page + direction };
+    });
+  };
+
   render() {
+    console.log(this.state.page, "<<<page??");
     const { articles, isLoading, err } = this.state;
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;
@@ -57,6 +71,31 @@ class ArticlesList extends React.Component {
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
+        <div className="pagination">
+          <div className="downPageArrow">
+            <button
+              disabled={this.state.page === 1}
+              onClick={() => this.handlePageChange(-1)}
+            >
+              <img
+                src="https://image.flaticon.com/icons/svg/16/16049.svg"
+                alt="down page arrow"
+              />
+            </button>
+          </div>
+          <p>{this.state.page}</p>
+          <div className="upPageArrow">
+            <button
+              disabled={this.state.page === this.state.maxPage}
+              onClick={() => this.handlePageChange(1)}
+            >
+              <img
+                src="https://image.flaticon.com/icons/svg/16/16049.svg"
+                alt="up page arrow"
+              />
+            </button>
+          </div>
+        </div>
       </main>
     );
   }

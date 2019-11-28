@@ -111,6 +111,32 @@ p {
   z-index: 1;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  background: rgb(153, 36, 36);
+  bottom: 0;
+}
+
+.footer {
+  background: rgb(153, 36, 36);
+  color: ivory;
+}
+
+.downPageArrow button {
+  background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.upPageArrow button {
+  background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
+  background-repeat: no-repeat;
+}
+
 .deleteComment {
   justify-content: center;
   align-content: center;
