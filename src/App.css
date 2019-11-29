@@ -75,7 +75,7 @@ p {
   grid-column-start: 1;
   grid-row-start: 1;
   justify-items: center;
-  align-items: center;
+  align-self: center;
 }
 
 .singleArticle {
@@ -88,22 +88,28 @@ p {
 .articleVoter {
   grid-column-start: 1;
   grid-row-start: 1;
+  padding-top: 20px;
 }
 
 .commentCard {
   margin: 10px;
   border: 2px solid rgb(41, 40, 40);
+  display: grid;
+  grid-template-columns: 75px auto;
 }
 
 .commentForm {
   margin-bottom: 20px;
 }
 
-.commentVoter .voter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-items: center;
+.commentVoter {
+  grid-column-start: 1;
+  align-self: center;
+}
+
+.commentCardBody {
+  grid-row-start: 1;
+  grid-column-start: 2;
 }
 
 .upArrow button {
@@ -111,6 +117,15 @@ p {
   background-repeat: no-repeat;
   transform: rotate(270deg);
   z-index: 1;
+  border: none;
+}
+
+.upArrow button:disabled {
+  opacity: 25%;
+}
+
+.upArrow button:disabled:hover {
+  font-size: 12px;
 }
 
 .downArrow button {
@@ -118,6 +133,15 @@ p {
   background-repeat: no-repeat;
   transform: rotate(90deg);
   z-index: 1;
+  border: none;
+}
+
+.downArrow button:disabled {
+  opacity: 25%;
+}
+
+.downArrow button:disabled:hover {
+  font-size: 12px;
 }
 
 .pagination {
@@ -129,6 +153,7 @@ p {
   background: rgb(153, 36, 36);
   bottom: 0;
   z-index: 5;
+  color: ivory;
 }
 
 .footer {
@@ -145,20 +170,38 @@ p {
   background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
   background-repeat: no-repeat;
   transform: rotate(180deg);
+  border: none;
+}
+
+.downPageArrow button:hover {
+  font-size: 15px;
+}
+
+.downPageArrow button:disabled {
+  opacity: 25%;
 }
 
 .upPageArrow button {
   background: url("https://image.flaticon.com/icons/svg/16/16049.svg");
   background-repeat: no-repeat;
+  border: none;
+}
+
+.upPageArrow button:hover {
+  font-size: 12px;
+}
+
+.upPageArrow button:disabled {
+  opacity: 25%;
+}
+
+.upPageArrow button:disabled:hover {
+  font-size: 12px;
 }
 
 .deleteComment {
   justify-content: center;
   align-content: center;
-}
-
-.deleteComment button {
-  border: 1px solid rgb(41, 40, 40);
 }
 
 .articleAdder {
@@ -167,7 +210,7 @@ p {
 }
 
 button {
-  border: none;
+  border: 1px solid rgb(41, 40, 40);
   background: none;
   font-family: "Calistoga", cursive;
   font-size: 12px;

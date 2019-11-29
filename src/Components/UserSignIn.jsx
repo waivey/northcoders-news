@@ -15,7 +15,6 @@ class UserSignIn extends Component {
   }
 
   handleSelect = ({ target: { value } }) => {
-    console.log(value);
     this.props.getLoginStatus(value);
     this.setState({ isSignedIn: value });
   };

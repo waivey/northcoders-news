@@ -61,7 +61,6 @@ class ArticlesList extends React.Component {
   };
 
   render() {
-    console.log(this.state.page, "<<<page??");
     const { articles, isLoading, err } = this.state;
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;

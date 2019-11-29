@@ -13,19 +13,21 @@ const CommentCard = ({
   getComments
 }) => {
   return (
-    <div className="commentCard">
-      <h5>
-        Posted by: {author}, {utils.formatDate(created_at)}
-      </h5>
-      {user === author && (
-        <Deleter id={comment_id} getComments={getComments} type="comments" />
-      )}
+    <section className="commentCard">
+      <div className="commentCardBody">
+        <h5>
+          Posted by: {author}, {utils.formatDate(created_at)}
+        </h5>
+        {user === author && (
+          <Deleter id={comment_id} getComments={getComments} type="comments" />
+        )}
+
+        <p>{body}</p>
+      </div>
       <div className="commentVoter">
         <Voter id={comment_id} votes={votes} type="comments" />
       </div>
-
-      <p>{body}</p>
-    </div>
+    </section>
   );
 };
 
