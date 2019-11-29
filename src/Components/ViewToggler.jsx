@@ -16,7 +16,7 @@ class ViewToggler extends Component {
   // };
 
   render() {
-    //if (this.props.isSubmitted) this.resetView();
+    // if (this.props.isSubmitted) this.setState({ isVisible: false });
     return (
       <div>
         <button onClick={this.handleClick}>
