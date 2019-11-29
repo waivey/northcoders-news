@@ -4,6 +4,7 @@ import * as api from "../Utils/api";
 import ArticleCard from "./ArticleCard";
 import Sorter from "./Sorter";
 import ErrHandler from "./ErrHandler";
+import Paginator from "./Paginator";
 
 class ArticlesList extends React.Component {
   state = {
@@ -70,31 +71,11 @@ class ArticlesList extends React.Component {
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;
         })}
-        <div className="pagination">
-          <div className="downPageArrow">
-            <button
-              disabled={this.state.page === 1}
-              onClick={() => this.handlePageChange(-1)}
-            >
-              <img
-                src="https://image.flaticon.com/icons/svg/16/16049.svg"
-                alt="down page arrow"
-              />
-            </button>
-          </div>
-          <p>{this.state.page}</p>
-          <div className="upPageArrow">
-            <button
-              disabled={this.state.page === this.state.maxPage}
-              onClick={() => this.handlePageChange(1)}
-            >
-              <img
-                src="https://image.flaticon.com/icons/svg/16/16049.svg"
-                alt="up page arrow"
-              />
-            </button>
-          </div>
-        </div>
+        <Paginator
+          maxPage={this.state.maxPage}
+          page={this.state.page}
+          handlePageChange={this.handlePageChange}
+        />
       </main>
     );
   }

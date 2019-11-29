@@ -28,14 +28,14 @@ exports.fetchSingleArticle = article_id => {
     });
 };
 
-exports.fetchAllCommentsByArticleId = (article_id, sort_by) => {
+exports.fetchAllCommentsByArticleId = (article_id, sort_by, p) => {
   return axios
     .get(
       `https://nc-backend-project-news.herokuapp.com/api/articles/${article_id}/comments`,
-      { params: { sort_by } }
+      { params: { sort_by, p } }
     )
-    .then(({ data: { comments } }) => {
-      return comments;
+    .then(({ data: { comments, total_count } }) => {
+      return { comments, total_count };
     });
 };
 
