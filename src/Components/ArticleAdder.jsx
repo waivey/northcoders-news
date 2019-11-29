@@ -19,7 +19,11 @@ class ArticleAdder extends Component {
     api
       .postArticle(this.props.user, this.state.title, this.state.body)
       .then(article => {
+        this.props.resetToggle();
         navigate(`/articles/${article.article_id}`);
+      })
+      .then(() => {
+        this.setState({ title: "", body: "" });
       })
       .catch(
         ({

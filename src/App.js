@@ -21,17 +21,15 @@ class App extends React.Component {
     const { user } = this.state;
     return (
       <div className="App">
-        <div className="AppWrap">
-          <Header />
-          <Navbar getLoginStatus={this.getLoginStatus} user={user} />
-          <Router>
-            <ArticlesList path="/" user={user} />
-            <ArticlesList path="/topics/:slug" user={user} />
-            <SingleArticle path="/articles/:article_id" user={user} />
-            <ErrHandler default />
-          </Router>
-          <Footer />
-        </div>
+        <Header />
+        <Navbar getLoginStatus={this.getLoginStatus} user={user} />
+        <Router>
+          <ArticlesList path="/" user={user} />
+          <ArticlesList path="/topics/:slug" user={user} />
+          <SingleArticle path="/articles/:article_id" user={user} />
+          <ErrHandler default />
+        </Router>
+        <Footer />
       </div>
     );
   }

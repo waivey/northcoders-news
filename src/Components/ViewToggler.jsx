@@ -11,7 +11,12 @@ class ViewToggler extends Component {
     });
   };
 
+  // resetView = () => {
+  //   this.setState({ isVisible: false });
+  // };
+
   render() {
+    //if (this.props.isSubmitted) this.resetView();
     return (
       <div>
         <button onClick={this.handleClick}>

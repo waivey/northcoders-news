@@ -68,7 +68,13 @@ class ArticlesList extends React.Component {
       <main className="articlesList">
         <Sorter name="articles" sortArticles={this.sortArticles} />
         {articles.map(article => {
-          return <ArticleCard key={article.article_id} {...article} />;
+          return (
+            <ArticleCard
+              key={article.article_id}
+              {...article}
+              user={this.props.user}
+            />
+          );
         })}
         <div className="pagination">
           <div className="downPageArrow">

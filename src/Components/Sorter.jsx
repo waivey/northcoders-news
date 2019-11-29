@@ -3,6 +3,7 @@ import React from "react";
 class Sorter extends React.Component {
   state = {
     sort_by: ["comment_count", "created_at", "votes"]
+    // isLoading: ''
   };
 
   handleSelect = ({ target: { value } }) => {

@@ -7,9 +7,6 @@
   font-family: "Martel", serif;
   position: relative;
   min-height: 100vh;
-}
-
-.AppWrap {
   padding-bottom: 2.5rem;
 }
 
@@ -17,6 +14,7 @@
   position: sticky;
   top: 0;
   margin: 0;
+  padding-top: 0.7em;
   background: rgb(153, 36, 36);
   color: ivory;
   height: 70px;
@@ -25,10 +23,10 @@
 
 h1 a {
   margin: 0;
+
   color: ivory;
   font-family: "Calistoga", cursive;
   font-size: 30px;
-  align-items: center;
 }
 
 h1 {
@@ -119,13 +117,12 @@ p {
   z-index: 1;
   border: none;
 }
+.upArrow button:hover {
+  font-size: 12px;
+}
 
 .upArrow button:disabled {
   opacity: 25%;
-}
-
-.upArrow button:disabled:hover {
-  font-size: 12px;
 }
 
 .downArrow button {
@@ -136,12 +133,12 @@ p {
   border: none;
 }
 
-.downArrow button:disabled {
-  opacity: 25%;
+.downArrow button:hover {
+  font-size: 12px;
 }
 
-.downArrow button:disabled:hover {
-  font-size: 12px;
+.downArrow button:disabled {
+  opacity: 25%;
 }
 
 .pagination {
@@ -214,6 +211,7 @@ button {
   background: none;
   font-family: "Calistoga", cursive;
   font-size: 12px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -229,6 +227,7 @@ select {
   background-image: url("https://image.flaticon.com/icons/svg/16/16049.svg");
   background-repeat: no-repeat;
   background-position: right;
+  cursor: pointer;
 }
 
 select option:checked,
@@ -239,4 +238,20 @@ select option:hover {
 option {
   text-decoration-color: none;
   background-color: rgb(153, 36, 36);
+}
+
+textarea:required {
+  box-shadow: none;
+}
+
+textarea:invalid:focus {
+  box-shadow: 0 0 2.5px red;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+input:invalid:focus {
+  box-shadow: 0 0 2.5px red;
 }

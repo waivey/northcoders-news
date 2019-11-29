@@ -8,7 +8,8 @@ import ViewToggler from "./ViewToggler";
 class Navbar extends React.Component {
   state = {
     topics: [],
-    topic: ""
+    topic: "",
+    isSubmitted: false
   };
 
   componentDidMount() {
@@ -19,6 +20,10 @@ class Navbar extends React.Component {
 
   handleSelect = event => {
     navigate(`/topics/${event.target.value}`);
+  };
+
+  resetToggle = () => {
+    this.setState({ isSubmitted: true });
   };
 
   render() {
@@ -38,8 +43,12 @@ class Navbar extends React.Component {
         </select>
         <UserSignIn getLoginStatus={this.props.getLoginStatus} />
         {this.props.user && (
-          <ViewToggler type="Add Article">
-            <ArticleAdder user={this.props.user} topics={this.state.topics} />
+          <ViewToggler type="Add Article" isSubmitted={this.state.isSubmitted}>
+            <ArticleAdder
+              user={this.props.user}
+              topics={this.state.topics}
+              resetToggle={this.resetToggle}
+            />
           </ViewToggler>
         )}
       </nav>
