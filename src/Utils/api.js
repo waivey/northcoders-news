@@ -35,6 +35,7 @@ exports.fetchAllCommentsByArticleId = (article_id, sort_by, p) => {
       { params: { sort_by, p } }
     )
     .then(({ data: { comments, total_count } }) => {
+      console.log(total_count, comments);
       return { comments, total_count };
     });
 };

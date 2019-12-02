@@ -1,6 +1,7 @@
 import React from "react";
 
 const Paginator = ({ maxPage, page, handlePageChange }) => {
+  console.log(maxPage, "<<maxPage", page, "<<page");
   return (
     <div className="pagination">
       <div className="downPageArrow">

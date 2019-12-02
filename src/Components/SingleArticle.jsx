@@ -57,6 +57,7 @@ class SingleArticle extends Component {
             <CommentsList
               article_id={article.article_id}
               user={this.props.user}
+              comment_count={article.comment_count}
             />
           </ViewToggler>
         </div>

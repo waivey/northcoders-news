@@ -37,11 +37,11 @@ class CommentsList extends React.Component {
         this.state.sorted,
         this.state.page
       )
-      .then(({ comments, total_count }) => {
+      .then(({ comments }) => {
         this.setState({
           comments,
           isLoading: false,
-          maxPage: Math.ceil(total_count / 10)
+          maxPage: Math.ceil(this.props.comment_count / 10)
         });
       })
       .catch(
@@ -66,13 +66,13 @@ class CommentsList extends React.Component {
   };
 
   handlePageChangeComments = direction => {
-    console.log("helloooooo???");
     this.setState(currentState => {
       return { page: currentState.page + direction };
     });
   };
 
   render() {
+    console.log(this.state.maxPage);
     const { comments, isLoading, err } = this.state;
     if (isLoading) return <Loader />;
     if (err) return <ErrHandler msg={err} />;
